@@ -105,14 +105,49 @@ p y
 #  8. Start with an array of strings and combine them all into a single string, separated by dashes.
 #     For example, ["volleyball", "basketball", "badminton"] becomes "-volleyball-basketball-badminton-".
 
+array = ["volleyball", "basketball", "badminton"]
+x = 0
+y = ""
 
+while x < array.length
+  y << array[x] + "-"
+  x += 1
+end
+
+p y
 
 
 #  9. Start with an array of hashes and find the hash with the shortest name (from the :name key).
 #     For example, [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}] becomes {name: "book", price: 4}.
 
+array = [{name: "chair", price: 100}, {name: "pencil", price: 1}, {name: "book", price: 4}]
+x = array[0]
+y = 0
+
+while y < array.length
+  if array[y][:name].length < x[:name].length
+    x = array[y]
+  end
+  y += 1
+end
+
+p x
+
+
 # 10. Start with an array of numbers and compute the maximum number.
 #     For example, [5, 10, 8, 3] becomes 10.
+array = [5, 10, 8, 3] 
+x = array[0]
+y = 0
+
+while y < array.length
+  if x < array[y]
+    x = array[y]
+  end
+  y += 1
+end
+
+p x
 
 
 # SOLUTIONS (using while loop): https://gist.github.com/peterxjang/376c8931a48549889eb3c9bc091e9f43
